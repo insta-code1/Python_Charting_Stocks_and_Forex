@@ -1,7 +1,7 @@
 import urllib2
 import time
 
-stockToPull = 'AAPL'
+stocksToPull = 'AAPL', 'GOOG','EA','FB','TSLA','FXI','SPY'
 
 def pullData(stock):
     try:
@@ -20,9 +20,11 @@ def pullData(stock):
 
         print 'Pulled',stock
         print 'sleeping'
-        time.sleep(5)
+        time.sleep(1)
 
     except Exception,e:
         print 'main loop',str(e)
 
-pullData(stockToPull)
+
+for eachStock in stocksToPull:
+    pullData(eachStock)
